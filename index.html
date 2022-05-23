@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Quiz</title>
+  <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <main class="container">
+    <header class="m-4">
+      <h2 class="text-center text-primary m-3">Random Quiz</h2>
+    </header>
+    <div class="main d-flex align-items-center justify-content-center">
+      <div id="final" class="card p-3 text-center shadow" style="display: none;">
+        <h3>You answered all of the questions!</h3>
+        <p id="score"></p>
+        <h4>Want to try it again?</h4>
+        <button id="again" class="btn btn-primary mb-1 mt-3">Again</button>
+      </div>
+      <div id="quiz" class="card p-3 col-md-6 shadow" style="display: none;">
+        
+        <div class="count card-header bg-primary text-white d-flex align-items-center justify-content-between">
+          <p>Questions</p>
+          <p><span id="current">0</span><span> / </span><span id="total"></span></p>
+        </div>
+        <h3 id="question" class="mb-3 mt-3"></h3>
+        <label id="a1" class="form-control w-50 m-1">
+          <input type="radio" checked="checked" name="radio">
+          <span class="checkmark"></span>
+        </label>
+        <label id="a2" class="form-control w-50 m-1">
+          <input type="radio" name="radio">
+          <span class="checkmark"></span>
+        </label>
+        <label id="a3" class="form-control w-50 m-1">
+          <input type="radio" name="radio">
+          <span class="checkmark"></span>
+        </label>
+        <label id="a4" class="form-control w-50 m-1">
+          <input type="radio" name="radio">
+          <span class="checkmark"></span>
+        </label>
+        <button id="next" class="btn btn-primary mb-1 mt-3">Submit</button>
+      </div>
+      <div id="settings" class="card shadow p-3 col-md-6">
+        <h3 class="text-center">Set up your Quiz!</h3>
+        <label for="category" class="mb-1 fs-4 font-weight-bold">Category :</label>
+        <select name="category" id="category" class="form-control mb-2">
+          <option value="9">General Knowledge</option>
+          <option value="27">Animals</option>
+          <option value="15">Video Games</option>
+          <option value="23">History</option>
+          <option value="21">Sports</option>
+        </select>
+        <div class="mt30">
+          <label for="difficulty" class="mb-1 fs-4 font-weight-bold">Difficulty :</label>
+          <label class="form-control w-50 m-1">
+            <input type="radio" name="radio" id="easy">
+            <span>Easy</span>
+          </label>
+          <label class="form-control w-50 m-1">
+            <input type="radio" name="radio" id="medium">
+            <span>Medium</span>
+          </label>
+          <label  class="form-control w-50 m-1">
+            <input type="radio" name="radio" id="hard">
+            <span>Hard</span>
+          </label>
+        </div>
+        <div class="mt30">
+          <label for="questions" class="mb-1 fs-4 font-weight-bold">Number of questions :</label>
+          <input class="form-control mb-1" name="questions" id="questions" type="text" pattern="[0-9]*" />
+        </div>  
+        <button id="start" class="btn btn-primary mb-1 mt-3">Start</button>
+      </div>  
+    </div>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  <script type="module" src="quiz/index.js"></script>
+</body>
+</html>
